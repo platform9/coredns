@@ -13,7 +13,6 @@ registry_url ?= docker.io
 image_name = ${registry_url}/platform9/coredns
 DOCKERFILE?=$(CURDIR)/Dockerfile
 UPSTREAM_VERSION?=$(shell git describe --tags HEAD | sed 's/-.*//' )
-TEAMCITY_BUILD_ID=1234
 image_tag = $(UPSTREAM_VERSION)-pmk-$(TEAMCITY_BUILD_ID)
 PF9_TAG=$(image_name):${image_tag}
 DOCKERARGS=
