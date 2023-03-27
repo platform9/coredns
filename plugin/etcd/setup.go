@@ -9,7 +9,7 @@ import (
 	"github.com/coredns/coredns/plugin/pkg/upstream"
 
 	"github.com/caddyserver/caddy"
-	etcdcv3 "go.etcd.io/etcd/clientv3"
+	etcdcv3 "go.etcd.io/etcd/client/v3"
 )
 
 func init() { plugin.Register("etcd", setup) }
