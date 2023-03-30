@@ -33,8 +33,6 @@ coredns: $(CHECKS)
 .PHONY: check
 check: core/plugin/zplugin.go core/dnsserver/zdirectives.go
 
-go-install: eval $(gimme 1.19.4)
-
 pf9-image: | $(BUILDDIR) ; $(info Building Docker image for pf9 Repo...) @ ## Build SR-IOV Network device plugin docker image
 	@docker build -t $(PF9_TAG) -f $(DOCKERFILE)  $(CURDIR) $(DOCKERARGS)
 	echo ${PF9_TAG} > $(BUILDDIR)/container-tag
